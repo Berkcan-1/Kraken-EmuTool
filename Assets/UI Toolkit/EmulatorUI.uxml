@@ -1,0 +1,138 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="EmulatorUIStyle.uss" />
+    
+    <ui:VisualElement class="ui-root" picking-mode="Ignore">
+        
+       
+        <ui:VisualElement class="sidebar" picking-mode="Position">
+            <ui:Button name="btnTabHard" text="H" tooltip="Hardware &amp; Battery" class="tab-btn active" />
+            <ui:Button name="btnTabCam" text="C" tooltip="Camera Angles" class="tab-btn" />
+            <ui:Button name="btnTabTerm" text="T" tooltip="ADB Terminal" class="tab-btn" />
+            <ui:Button name="btnTabAuto" text="A" tooltip="App Manager" class="tab-btn" />
+            <ui:Button name="btnTabParts" text="P" tooltip="Removed Parts" class="tab-btn" />
+            <ui:Button name="btnTabMacro" text="M" tooltip="Auto-Clicker (Macro)" class="tab-btn" />
+            
+            
+            <ui:Button name="btnExit" text="X" tooltip="Exit to Main Menu" class="tab-btn exit-btn" style="margin-bottom: 0;" />
+        </ui:VisualElement>
+
+        
+        <ui:VisualElement name="panelHard" class="panel-container" style="display: flex;" picking-mode="Position">
+            <ui:Label text="Hardware Controls" class="panel-title" />
+            
+            <ui:ScrollView class="app-list-scroll" style="max-height: 350px; background-color: transparent; border-width: 0; padding: 0; margin: 0;">
+                
+                
+                <ui:Label text="Physical Keys" class="panel-subtitle" style="margin-top: 0;" />
+                <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+                    <ui:Button name="btnPower" text="Power" class="action-btn" style="flex-grow: 1; margin-right: 2px;" />
+                    <ui:Button name="btnHome" text="Home" class="action-btn" style="flex-grow: 1; margin-left: 2px;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+                    <ui:Button name="btnVolUp" text="Vol +" class="action-btn" style="flex-grow: 1; margin-right: 2px;" />
+                    <ui:Button name="btnVolDown" text="Vol -" class="action-btn" style="flex-grow: 1; margin-left: 2px;" />
+                </ui:VisualElement>
+
+                
+                <ui:Label text="Battery Simulation" class="panel-subtitle" style="margin-top: 15px;" />
+                <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+                    <ui:Button name="btnBatPlus" text="+5%" class="action-btn" style="flex-grow: 1; margin-right: 2px; background-color: rgb(52, 199, 89); color: white;" />
+                    <ui:Button name="btnBatMinus" text="-5%" class="action-btn" style="flex-grow: 1; margin-left: 2px; margin-right: 2px; background-color: #ff3b30; color: white;" />
+                    <ui:Button name="btnBatReset" text="Reset" class="action-btn" style="flex-grow: 1; margin-left: 2px;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+                    <ui:Button name="btnBatCharge" text="Plug AC (Charge)" class="action-btn" style="flex-grow: 1; margin-right: 2px;" />
+                    <ui:Button name="btnBatUnplug" text="Unplug AC" class="action-btn" style="flex-grow: 1; margin-left: 2px;" />
+                </ui:VisualElement>
+
+                
+                <ui:Label text="Connectivity Chips" class="panel-subtitle" style="margin-top: 15px;" />
+                <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+                    <ui:Button name="btnWifiToggle" text="Toggle Wi-Fi" class="action-btn" style="flex-grow: 1; margin-right: 2px;" />
+                    <ui:Button name="btnDataToggle" text="Toggle Cellular" class="action-btn" style="flex-grow: 1; margin-left: 2px;" />
+                </ui:VisualElement>
+
+                
+                <ui:Label text="System Environment" class="panel-subtitle" style="margin-top: 15px;" />
+                <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+                    <ui:Button name="btnDarkMode" text="Dark Mode" class="action-btn" style="flex-grow: 1; margin-right: 2px; background-color: #1d1d1f; color: white;" />
+                    <ui:Button name="btnLightMode" text="Light Mode" class="action-btn" style="flex-grow: 1; margin-left: 2px; background-color: #f2f2f7; color: black;" />
+                </ui:VisualElement>
+
+            </ui:ScrollView>
+        </ui:VisualElement>
+
+        
+        <ui:VisualElement name="panelCam" class="panel-container" picking-mode="Position">
+            <ui:Label text="Camera" class="panel-title" />
+            <ui:Button name="btnCamFront" text="Front (0°)" class="action-btn" />
+            <ui:Button name="btnCamBack" text="Back (180°)" class="action-btn" />
+            <ui:Button name="btnCamLeft" text="Left Side (90°)" class="action-btn" />
+            <ui:Button name="btnCamRight" text="Right Side (-90°)" class="action-btn" />
+        </ui:VisualElement>
+
+        
+        <ui:VisualElement name="panelTerm" class="panel-container" picking-mode="Position">
+            <ui:Label text="ADB Terminal" class="panel-title" />
+            <ui:TextField name="adbInput" placeholder-text="e.g., shell ls -l or root" class="adb-input" />
+            <ui:Button name="btnSendAdb" text="Run Command" class="action-btn" style="background-color: rgb(0,113,227); color: white;" />
+            <ui:ScrollView class="app-list-scroll" style="max-height: 200px; margin-top: 5px;">
+                <ui:Label name="lblTerminalLog" text="System ready..." class="log-label" style="margin-top: 0;" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+
+        
+        <ui:VisualElement name="panelAuto" class="panel-container" picking-mode="Position">
+            <ui:Label text="App Manager" class="panel-title" />
+            <ui:Button name="btnRefreshApps" text="Scan Installed Apps" class="action-btn" style="background-color: rgb(0,113,227); color: white;" />
+            <ui:ScrollView name="appListScroll" class="app-list-scroll" />
+            <ui:Label name="lblAutoLog" text="System ready..." class="log-label" />
+        </ui:VisualElement>
+
+        
+        <ui:VisualElement name="panelParts" class="panel-container" picking-mode="Position">
+            <ui:Label text="Removed Parts" class="panel-title" />
+            <ui:Label text="Hardware components removed from the device will appear here. Click the button to reattach them." class="panel-subtitle" style="white-space: normal; margin-bottom: 10px;" />
+            <ui:ScrollView name="partsListScroll" class="app-list-scroll" style="max-height: 250px;" />
+        </ui:VisualElement>
+
+        
+        <ui:VisualElement name="panelMacro" class="panel-container" picking-mode="Position">
+            <ui:Label text="Key Lock (Macro)" class="panel-title" />
+            <ui:Label text="You can lock physical keys (Power, Volume) by clicking and holding the button on the device, then dragging your mouse away." class="panel-subtitle" style="white-space: normal; margin-bottom: 10px;" />
+            <ui:ScrollView name="macroListScroll" class="app-list-scroll" style="max-height: 250px;" />
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+
+    
+    <ui:VisualElement name="edlSlidePanel" class="edl-slide-panel">
+        <ui:Label text="EDL MODE" class="header" style="color: #ff3b30; -unity-text-align: middle-left;" />
+        <ui:Label text="Qualcomm HS-USB QDLoader 9008 connected. Device is ready for ROM flashing." class="panel-subtitle" style="margin-bottom: 25px; white-space: normal;" />
+        
+        <ui:Label text="Source ROM / SDK Folder" class="section-title" />
+        
+        <ui:VisualElement style="flex-direction: row; margin-bottom: 20px;">
+            <ui:TextField name="romSourceInput" placeholder-text="e.g., C:\RomFiles" class="adb-input" style="flex-grow: 1; margin-bottom: 0; margin-right: 5px;" />
+            <ui:Button name="btnBrowseFolder" text="..." class="action-btn" style="width: 45px; height: 38px; margin-bottom: 0;" />
+        </ui:VisualElement>
+        
+        <ui:Button name="btnFlashRom" text="Flash ROM" class="action-btn" style="background-color: #ff3b30; color: white;" />
+        <ui:Button name="btnCloseEdl" text="Close &amp; Reboot" class="action-btn" style="margin-top: 10px;" />
+        
+        <ui:Label name="lblFlashLog" text="Waiting for system connection..." class="log-label" style="margin-top: 20px;" />
+    </ui:VisualElement>
+
+    
+    <ui:VisualElement name="fastbootSlidePanel" class="fastboot-slide-panel">
+        <ui:Label text="FASTBOOT TERMINAL" class="header" style="color: rgb(0, 113, 227); -unity-text-align: middle-left;" />
+        <ui:Label text="Device is in Fastboot mode. You can send OEM lock/unlock and reboot commands from here." class="panel-subtitle" style="margin-bottom: 25px; white-space: normal;" />
+        
+        <ui:Label text="Fastboot Command" class="section-title" />
+        <ui:TextField name="fbInput" placeholder-text="e.g., fastboot oem unlock" class="adb-input" style="margin-bottom: 10px;" />
+        
+        <ui:Button name="btnSendFb" text="Send Command" class="action-btn" style="background-color: rgb(0, 113, 227); color: white;" />
+        <ui:Label name="lblFbLog" text="Waiting for any device..." class="log-label" style="margin-top: 15px; color: rgb(0, 150, 0); -unity-font-style: bold;" />
+    </ui:VisualElement>
+
+</ui:UXML>
