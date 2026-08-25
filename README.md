@@ -6,7 +6,7 @@ In short, the program offers an enhanced experience by adding EDL Fastboot Recov
 
 The program allows you to quickly uninstall applications from user 0. A bootloader lock system has been implemented. If the `fastboot oem unlock` command is sent, the phone will wipe data and start up as writable. Additionally, 3D hardware removal and testpointing capabilities are available. It's a lifesaver in bootloop situations.
 
-
+<img width="1911" height="864" alt="ggga (44)" src="https://github.com/user-attachments/assets/cca53956-dad7-48ec-b8cf-c2c85517af1d" />
 <img width="1919" height="868" alt="ggga (53)" src="https://github.com/user-attachments/assets/ccdc8bb0-9d97-4f04-8978-36cf052e17ba" />
 <img width="1916" height="865" alt="ggga (52)" src="https://github.com/user-attachments/assets/38469a06-ecae-44e8-a005-febdb171b38d" />
 <img width="1916" height="863" alt="ggga (51)" src="https://github.com/user-attachments/assets/5abd7d84-75fc-42e4-94d9-6d6b40b2c0ed" />
