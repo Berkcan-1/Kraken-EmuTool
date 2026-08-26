@@ -1,6 +1,6 @@
 # Kraken EmuTool
 
-[![GitHub stars](https://shields.io)](https://github.com)
+[![GitHub stars](https://shields.io)]([https://github.com](https://github.com/Berkcan-1/Kraken-EmuTool))
 
 
 ## An advanced emulator client that communicates with Android Studio via Scrcpy.
