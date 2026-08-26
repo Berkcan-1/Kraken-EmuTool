@@ -1,5 +1,8 @@
 # Kraken EmuTool
 
+[![GitHub stars](https://shields.io)](https://github.com)
+
+
 ## An advanced emulator client that communicates with Android Studio via Scrcpy.
 
 In short, the program offers an enhanced experience by adding EDL Fastboot Recovery partitions to the emulator based on Android Studio. 
